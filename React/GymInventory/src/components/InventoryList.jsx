@@ -8,6 +8,7 @@ const InventoryList = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
+        fetchInventoryItems();
         fetchItems();
     }, []);
 
@@ -21,6 +22,15 @@ const InventoryList = () => {
         fetchItems(); // Refresh the list after deletion
     };
 
+    const fetchInventoryItems = async () => {
+        try {
+          const response = await fetch('/api');
+          const data = await response.json();
+          console.log(data);
+        } catch (error) {
+          console.error('Error fetching inventory items:', error);
+        }
+      };
     return (
         <div>
             <h2>Inventory List</h2>
