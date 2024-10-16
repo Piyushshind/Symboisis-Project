@@ -34,25 +34,27 @@ const AddInventoryForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Add Inventory Item</h2>
-      <input type="text" name="itemName" value={itemData.itemName} onChange={handleChange} placeholder="Item Name" required />
-      <select name="itemCategory" value={itemData.itemCategory} onChange={handleChange}>
-        <option value="CARDIO">Cardio</option>
-        <option value="STRENGTH">Strength</option>
-        <option value="WEIGHTS">Weights</option>
-      </select>
-      <select name="itemCondition" value={itemData.itemCondition} onChange={handleChange}>
-        <option value="GOOD">Good</option>
-        <option value="AVERAGE">Average</option>
-        <option value="BAD">Bad</option>
-      </select>
-      <input type="number" name="price" value={itemData.price} onChange={handleChange} placeholder="Price" required />
-      <input type="number" name="quantity" value={itemData.quantity} onChange={handleChange} placeholder="Quantity" required />
-      <input type="text" name="distributorContactNumber" value={itemData.distributorContactNumber} onChange={handleChange} placeholder="Distributor Contact" required />
-      <input type="email" name="distributorEmail" value={itemData.distributorEmail} onChange={handleChange} placeholder="Distributor Email" required />
-      <button type="submit">Add Item</button>
-    </form>
+     <div className="inventory-form">
+            <form onSubmit={handleSubmit}>
+                <h2 className="form-title">Add Inventory Item</h2>
+                <input className="form-input" type="text" name="itemName" value={itemData.itemName} onChange={handleChange} placeholder="Item Name" required />
+                <select className="form-select" name="itemCategory" value={itemData.itemCategory} onChange={handleChange}>
+                    <option value="CARDIO">Cardio</option>
+                    <option value="STRENGTH">Strength</option>
+                    <option value="WEIGHTS">Weights</option>
+                </select>
+                <select className="form-select" name="itemCondition" value={itemData.itemCondition} onChange={handleChange}>
+                    <option value="GOOD">Good</option>
+                    <option value="AVERAGE">Average</option>
+                    <option value="BAD">Bad</option>
+                </select>
+                <input className="form-input" type="number" name="price" value={itemData.price} onChange={handleChange} placeholder="Price" required />
+                <input className="form-input" type="number" name="quantity" value={itemData.quantity} onChange={handleChange} placeholder="Quantity" required />
+                <input className="form-input" type="text" name="distributorContactNumber" value={itemData.distributorContactNumber} onChange={handleChange} placeholder="Distributor Contact" required />
+                <input className="form-input" type="email" name="distributorEmail" value={itemData.distributorEmail} onChange={handleChange} placeholder="Distributor Email" required />
+                <button className="form-button" type="submit">Add Item</button>
+            </form>
+        </div>
   );
 };
 

@@ -25,17 +25,17 @@ const InventoryList = () => {
     const fetchInventoryItems = async () => {
         try {
             console.log("ye re bhai");
-          const response = await fetch('/api/v1/inventory/getAll');
-          const data = await response.json();
-          console.log(data);
+            const response = await fetch('/api/v1/inventory/getAll');
+            const data = await response.json();
+            console.log(data);
         } catch (error) {
-          console.error('Error fetching inventory items:', error);
+            console.error('Error fetching inventory items:', error);
         }
-      };
+    };
     return (
-        <div>
-            <h2>Inventory List</h2>
-            <table>
+        <div className="inventory-list">
+            <h2 className="title">Inventory List</h2>
+            <table className="inventory-table">
                 <thead>
                     <tr>
                         <th>Item Name</th>
@@ -52,13 +52,13 @@ const InventoryList = () => {
                             <td>{item.itemName}</td>
                             <td>{item.itemCategory}</td>
                             <td>{item.itemCondition}</td>
-                            <td>{item.price}</td>
+                            <td>₹{item.price}</td>
                             <td>{item.quantity}</td>
                             <td>
                                 <Link to={`/update/${item.id}`}>
-                                    <button>Update</button>
+                                    <button className="action-button">Update</button>
                                 </Link>
-                                <button onClick={() => handleDelete(item.id)}>Delete</button>
+                                <button className="action-button" onClick={() => handleDelete(item.id)}>Delete</button>
                             </td>
                         </tr>
                     ))}
