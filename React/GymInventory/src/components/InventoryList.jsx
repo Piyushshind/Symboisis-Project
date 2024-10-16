@@ -24,7 +24,8 @@ const InventoryList = () => {
 
     const fetchInventoryItems = async () => {
         try {
-          const response = await fetch('/api');
+            console.log("ye re bhai");
+          const response = await fetch('/api/v1/inventory/getAll');
           const data = await response.json();
           console.log(data);
         } catch (error) {

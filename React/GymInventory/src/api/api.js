@@ -5,7 +5,7 @@ const API_URL = 'http://localhost:8071/api/v1/inventory';
 
 // Get all inventory items
 export const getInventoryItems = async () => {
-    return await axios.get(`${API_URL}`);
+    return await axios.get(`${API_URL}/getAll`);
 };
 
 // Add a new inventory item

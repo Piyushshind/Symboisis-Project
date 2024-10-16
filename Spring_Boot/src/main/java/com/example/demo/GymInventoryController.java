@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import jakarta.validation.Valid;
 
-@CrossOrigin(origins = "http://localhost:5173")
+// @CrossOrigin(origins = "http://localhost:5173")
 @RestController
 @RequestMapping("/api/v1/inventory")
 public class GymInventoryController {
@@ -24,13 +24,13 @@ public class GymInventoryController {
 	@Autowired
 	public GymInventoryService gymInventoryService;
 
-	@PostMapping("create")
+	@PostMapping("/create")
 	public ResponseEntity<GymInventoryEntity> createInventory(@Valid @RequestBody GymInventoryEntity inventory) {
 		GymInventoryEntity savedInventory = gymInventoryService.saveInventory(inventory);
 		return ResponseEntity.ok(savedInventory);
 	}
 
-	@GetMapping("cheack")
+	@GetMapping("/cheack")
 	public String cheack() {
 		return "cheack .............. by piyush ";
 	}
@@ -41,7 +41,7 @@ public class GymInventoryController {
         return ResponseEntity.ok(savedInventories);
     }
 	
-	@GetMapping("getAll")
+	@GetMapping("/getAll")
 	public ResponseEntity<List<GymInventoryEntity>> getAllInventories() {
 		List<GymInventoryEntity> inventories = gymInventoryService.getAllInventories();
 		return ResponseEntity.ok(inventories);
