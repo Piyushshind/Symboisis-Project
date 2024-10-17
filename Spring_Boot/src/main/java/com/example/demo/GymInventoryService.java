@@ -43,7 +43,7 @@ public class GymInventoryService {
 		}).orElseThrow(() -> new RuntimeException("Inventory not found with id: " + id));
 	}
 
-	// Delete an inventory item
+
 	public void deleteInventory(Long id) {
 		gymInventoryRepository.deleteById(id);
 	}

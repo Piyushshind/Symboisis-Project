@@ -20,7 +20,7 @@ const AddInventoryForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await addInventoryItem(itemData);
-    // Clear the form after submission
+   
     setItemData({
       itemName: '',
       itemCategory: 'CARDIO',
@@ -52,7 +52,7 @@ const AddInventoryForm = () => {
                 <input className="form-input" type="number" name="quantity" value={itemData.quantity} onChange={handleChange} placeholder="Quantity" required />
                 <input className="form-input" type="text" name="distributorContactNumber" value={itemData.distributorContactNumber} onChange={handleChange} placeholder="Distributor Contact" required />
                 <input className="form-input" type="email" name="distributorEmail" value={itemData.distributorEmail} onChange={handleChange} placeholder="Distributor Email" required />
-                <button className="form-button" type="submit">Add Item</button>
+                <button className="form-button" type="submit" onClick={()=> handleSubmit()}>Add Item</button>
             </form>
         </div>
   );

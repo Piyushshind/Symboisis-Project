@@ -19,7 +19,7 @@ const InventoryList = () => {
 
     const handleDelete = async (id) => {
         await deleteInventoryItem(id);
-        fetchItems(); // Refresh the list after deletion
+        fetchItems();
     };
 
     const fetchInventoryItems = async () => {
